@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "./user_rpc";
+
+package user_rpc;
+
+service UserService {
+  rpc GetUser (GetUserRequest) returns (GetUserResponse) {}
+}
+
+message GetUserRequest {
+  string user_id = 1;
+}
+
+message GetUserResponse {
+  string user_id = 1;
+  string name = 2;
+}
